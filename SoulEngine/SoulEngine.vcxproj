@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{640FF606-A38D-46C0-A4D3-4F1D5F410FC4}</ProjectGuid>
+    <RootNamespace>SoulEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IncludePath>$(SolutionDir)$(ProjectName)\include;$(SolutionDir)Dependencies\entt\include;$(IncludePath)</IncludePath>
+    <IntDir>..\bin\$(Platform)\$(Configuration)\$(ProjectName)\obj\</IntDir>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IncludePath>$(SolutionDir)$(ProjectName)\include;$(SolutionDir)Dependencies\entt\include;$(IncludePath)</IncludePath>
+    <IntDir>..\bin\$(Platform)\$(Configuration)\$(ProjectName)\obj\</IntDir>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\entt\include;$(SolutionDir)Dependencies\glad;$(SolutionDir)Dependencies\stb\include;$(SolutionDir)Dependencies\glfw\include;$(SolutionDir)Dependencies\box2d\include;$(SolutionDir)Dependencies\freetype\include;$(SolutionDir)Dependencies\nlohmann</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>..\bin\$(IntDir)$(ProjectName)\$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\entt\include;$(SolutionDir)Dependencies\glad;$(SolutionDir)Dependencies\stb\include;$(SolutionDir)Dependencies\glfw\include;$(SolutionDir)Dependencies\box2d\include;$(SolutionDir)Dependencies\freetype\include;$(SolutionDir)Dependencies\nlohmann</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AI\Agent.cpp" />
+    <ClCompile Include="src\AI\Chromosome.cpp" />
+    <ClCompile Include="src\AI\Population.cpp" />
+    <ClCompile Include="src\AI\Layer.cpp" />
+    <ClCompile Include="src\AI\NeuralNetwork.cpp" />
+    <ClCompile Include="src\Assets\Fonts\Font.cpp" />
+    <ClCompile Include="src\Assets\Fonts\FontManager.cpp" />
+    <ClCompile Include="src\Assets\Shaders\ShaderIO.cpp" />
+    <ClCompile Include="src\Assets\Shaders\ShaderManager.cpp" />
+    <ClCompile Include="src\Assets\Textures\TextureIO.cpp" />
+    <ClCompile Include="src\Assets\Textures\TextureManager.cpp" />
+    <ClCompile Include="src\Helpers\Random.cpp" />
+    <ClCompile Include="src\Helpers\SceneSerializer.cpp" />
+    <ClCompile Include="src\Helpers\Uuid.cpp" />
+    <ClCompile Include="src\Physics2D\QueryCallback.cpp" />
+    <ClCompile Include="src\Physics2D\RayCastClosestCallback.cpp" />
+    <ClCompile Include="src\Physics2D\Sensors\RaySensor2D.cpp" />
+    <ClCompile Include="src\Rendering\Framebuffer.cpp" />
+    <ClCompile Include="src\Rendering\IndexBuffer.cpp" />
+    <ClCompile Include="src\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Rendering\Texture.cpp" />
+    <ClCompile Include="src\Rendering\UniformBuffer.cpp" />
+    <ClCompile Include="src\Rendering\VertexArray.cpp" />
+    <ClCompile Include="src\Rendering\VertexBuffer.cpp" />
+    <ClCompile Include="src\Physics2D\ContactListener.cpp" />
+    <ClCompile Include="src\Scenes\Debug.cpp" />
+    <ClCompile Include="src\Scenes\Entities\Behavior.cpp" />
+    <ClCompile Include="src\Scenes\Entities\Colliders.cpp" />
+    <ClCompile Include="src\Scenes\Entities\Rigidbody2D.cpp" />
+    <ClCompile Include="src\Scenes\Entities\BehaviorBatch.cpp" />
+    <ClCompile Include="src\Scenes\MainCamera.cpp" />
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\Physics2D\Physics2D.cpp" />
+    <ClCompile Include="src\Scenes\Renderer2D.cpp" />
+    <ClCompile Include="src\Rendering\RendererApi.cpp" />
+    <ClCompile Include="src\Scenes\Scene.cpp" />
+    <ClCompile Include="src\Scenes\SceneManager.cpp" />
+    <ClCompile Include="src\Scenes\UI.cpp" />
+    <ClCompile Include="src\Utils\Color.cpp" />
+    <ClCompile Include="src\Core.cpp" />
+    <ClCompile Include="src\Window\Input.cpp" />
+    <ClCompile Include="src\Window\Time.cpp" />
+    <ClCompile Include="src\Window\Application.cpp" />
+    <ClCompile Include="src\Window\NativeWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\AI\Agent.h" />
+    <ClInclude Include="include\AI\Chromosome.h" />
+    <ClInclude Include="include\AI\Population.h" />
+    <ClInclude Include="include\AI\Layer.h" />
+    <ClInclude Include="include\AI\NeuralNetwork.h" />
+    <ClInclude Include="include\AI\Sensors\RaySensor2D.h" />
+    <ClInclude Include="include\Assets\Fonts\Font.h" />
+    <ClInclude Include="include\Assets\Fonts\FontManager.h" />
+    <ClInclude Include="include\Assets\Shaders\ShaderIO.h" />
+    <ClInclude Include="include\Assets\Shaders\ShaderManager.h" />
+    <ClInclude Include="include\Assets\Textures\TextureManager.h" />
+    <ClInclude Include="include\Assets\Textures\TextureIO.h" />
+    <ClInclude Include="include\Behavior.h" />
+    <ClInclude Include="include\Helpers\Random.h" />
+    <ClInclude Include="include\Helpers\SceneSerializer.h" />
+    <ClInclude Include="include\Helpers\Uuid.h" />
+    <ClInclude Include="include\Physics2D\Collision.h" />
+    <ClInclude Include="include\Physics2D\QueryCallback.h" />
+    <ClInclude Include="include\Physics2D\RayCastClosestCallback.h" />
+    <ClInclude Include="include\Rendering\Framebuffer.h" />
+    <ClInclude Include="include\Rendering\IndexBuffer.h" />
+    <ClInclude Include="include\Rendering\Shader.h" />
+    <ClInclude Include="include\Rendering\Texture.h" />
+    <ClInclude Include="include\Rendering\UniformBuffer.h" />
+    <ClInclude Include="include\Rendering\Utils\Buffer.h" />
+    <ClInclude Include="include\Rendering\VertexArray.h" />
+    <ClInclude Include="include\Rendering\VertexBuffer.h" />
+    <ClInclude Include="include\Physics2D\ContactListener.h" />
+    <ClInclude Include="include\Scenes\Debug.h" />
+    <ClInclude Include="include\Scenes\Entities\Behavior.h" />
+    <ClInclude Include="include\Scenes\Entities\Colliders.h" />
+    <ClInclude Include="include\Scenes\Entities\Components.h" />
+    <ClInclude Include="include\Scenes\Entities\GameObject.h" />
+    <ClInclude Include="include\Scenes\Entities\Rigidbody2D.h" />
+    <ClInclude Include="include\Scenes\Entities\BehaviorBatch.h" />
+    <ClInclude Include="include\Scenes\MainCamera.h" />
+    <ClInclude Include="include\pch.h" />
+    <ClInclude Include="include\Physics2D\Physics2D.h" />
+    <ClInclude Include="include\Scenes\Scene.h" />
+    <ClInclude Include="include\Rendering\RendererApi.h" />
+    <ClInclude Include="include\Scenes\Renderer2D.h" />
+    <ClInclude Include="include\Scenes\SceneManager.h" />
+    <ClInclude Include="include\Scenes\UI.h" />
+    <ClInclude Include="include\SoulEngine.h" />
+    <ClInclude Include="include\Utils\Color.h" />
+    <ClInclude Include="include\Core.h" />
+    <ClInclude Include="include\Utils\Physics2D.h" />
+    <ClInclude Include="include\Utils\RaycastHit2D.h" />
+    <ClInclude Include="include\Utils\Timestep.h" />
+    <ClInclude Include="include\Window\Input.h" />
+    <ClInclude Include="include\Window\Inputs.h" />
+    <ClInclude Include="include\Window\Time.h" />
+    <ClInclude Include="include\Window\Application.h" />
+    <ClInclude Include="include\Window\NativeWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\Assets\Shaders\GLSL\Circle.frag" />
+    <None Include="include\Assets\Shaders\GLSL\Framebuffer.frag" />
+    <None Include="include\Assets\Shaders\GLSL\Framebuffer.vert" />
+    <None Include="include\Assets\Shaders\GLSL\Line.frag" />
+    <None Include="include\Assets\Shaders\GLSL\Line.vert" />
+    <None Include="include\Assets\Shaders\GLSL\Sprite.frag" />
+    <None Include="include\Assets\Shaders\GLSL\Sprite.vert" />
+    <None Include="include\Assets\Shaders\GLSL\Text.frag" />
+    <None Include="include\Assets\Shaders\GLSL\Text.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\Assets\Shaders\GLSL\Circle.vert" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
